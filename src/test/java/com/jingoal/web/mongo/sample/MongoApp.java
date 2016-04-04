@@ -20,7 +20,7 @@ public class MongoApp {
 
 	public static void main(String[] args) throws Exception {
 
-		MongoOperations mongoOps = new MongoTemplate(new SimpleMongoDbFactory(new Mongo(), "database"));
+		MongoOperations mongoOps = new MongoTemplate(new SimpleMongoDbFactory(new Mongo(), "mongodb-simple"));
 
 		Person p = new Person("Joe", 34);
 

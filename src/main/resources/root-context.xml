@@ -15,7 +15,7 @@
 	</context:component-scan>
 
 	<context:property-placeholder
-		ignore-unresolvable="true" location="classpath:/placeholder/*.properties" />
+		ignore-unresolvable="true" location="classpath:placeholder/*.properties" />
 
 	<import resource="classpath:spring/spring-mongo.xml" />
 </beans>

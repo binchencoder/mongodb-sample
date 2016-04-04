@@ -26,7 +26,7 @@
 			     write-fsync="true"/>
 		</mongo:mongo>
 		
-        <mongo:db-factory dbname="database" mongo-ref="mongo"/>
+        <mongo:db-factory dbname="${mongo.database}" mongo-ref="mongo"/>
 		
         <!-- 非主线模块需要的，因为modulebase导入这些东西 -->
         <bean class="org.springframework.data.mongodb.core.mapping.event.LoggingEventListener" />

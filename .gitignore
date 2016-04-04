@@ -49,6 +49,7 @@ Temporary Items
 *.project
 .settings/*
 *.prefs
-target/*
-logs/*
-bin/*
+target
+logs
+bin
+test-output
