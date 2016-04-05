@@ -35,7 +35,7 @@ public class Mongo4InsertSaveTest extends AbstractTestNGSpringContextTests {
 	 * @description: mongodb insert test case
 	 * 
 	 * @author: chenbin
-	 * @time: 2016Äê4ÔÂ4ÈÕ ÏÂÎç9:28:26
+	 * @time: 2016å¹´4æœˆ4æ—¥ ä¸‹åˆ 19:28:26
 	 */
 	@Test
 	public void insertTest() {

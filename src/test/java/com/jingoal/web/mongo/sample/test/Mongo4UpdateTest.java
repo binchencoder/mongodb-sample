@@ -30,7 +30,7 @@ public class Mongo4UpdateTest extends AbstractTestNGSpringContextTests {
 	 * @description: mongodb update test case
 	 *
 	 * @author: chenbin
-	 * @time: 2016Äê4ÔÂ4ÈÕ ÏÂÎç10:07:32
+	 * @time: 2016å¹´4æœˆ4æ—¥ ä¸‹åˆ10:07:32
 	 */
 	@Test
 	public void updateTest(){
@@ -45,7 +45,6 @@ public class Mongo4UpdateTest extends AbstractTestNGSpringContextTests {
 		
 		Person qp1 = mongoTemplate.findOne(query(where("id").is(chen.getId())), Person.class);
 		Assert.assertEquals(qp1.getName(), zhang.getName());*/
-		
 		
 	}
 }

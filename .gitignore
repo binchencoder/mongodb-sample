@@ -53,3 +53,4 @@ target
 logs
 bin
 test-output
+/.settings/
