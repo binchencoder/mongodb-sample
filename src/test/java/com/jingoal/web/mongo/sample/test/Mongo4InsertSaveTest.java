@@ -20,14 +20,14 @@ public class Mongo4InsertSaveTest extends AbstractTestNGSpringContextTests {
 
 	@Autowired
 	private MongoTemplate mongoTemplate;
-	
+
 	@BeforeClass
-	public void clearCollection(){
+	public void clearCollection() {
 		mongoTemplate.dropCollection(Person.class);
 	}
-	
+
 	@AfterClass
-	public void destoryCollection(){
+	public void destoryCollection() {
 		mongoTemplate.dropCollection(Person.class);
 	}
 
@@ -41,23 +41,23 @@ public class Mongo4InsertSaveTest extends AbstractTestNGSpringContextTests {
 	public void insertTest() {
 		Person p = new Person("Bob", 33);
 		mongoTemplate.insert(p);
-		
+
 		BasicQuery query = new BasicQuery("{ age : { $eq : 33 } }");
 		Person qp = mongoTemplate.findOne(query, Person.class);
 		Assert.assertNotNull(qp);
 	}
-	
+
 	@Test
-	public void saveTest(){
+	public void saveTest() {
 		Person chen = new Person("chenbin", 26);
 		mongoTemplate.insert(chen);
-		
+
 		Person qp = mongoTemplate.findOne(query(where("name").is("chenbin")), Person.class);
 		Assert.assertNotNull(qp);
-		
+
 		Person zhang = new Person(chen.getId(), "zhangxia", 27);
 		mongoTemplate.save(zhang);
-		
+
 		Person qp1 = mongoTemplate.findOne(query(where("id").is(chen.getId())), Person.class);
 		Assert.assertEquals(qp1.getName(), zhang.getName());
 	}

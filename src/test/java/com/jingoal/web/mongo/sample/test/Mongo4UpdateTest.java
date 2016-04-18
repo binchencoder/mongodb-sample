@@ -15,17 +15,17 @@ public class Mongo4UpdateTest extends AbstractTestNGSpringContextTests {
 
 	@Autowired
 	private MongoTemplate mongoTemplate;
-	
+
 	@BeforeClass
-	public void clearCollection(){
+	public void clearCollection() {
 		mongoTemplate.dropCollection(Person.class);
 	}
-	
+
 	@AfterClass
-	public void destoryCollection(){
+	public void destoryCollection() {
 		mongoTemplate.dropCollection(Person.class);
 	}
-	
+
 	/**
 	 * @description: mongodb update test case
 	 *
@@ -33,18 +33,20 @@ public class Mongo4UpdateTest extends AbstractTestNGSpringContextTests {
 	 * @time: 2016年4月4日 下午10:07:32
 	 */
 	@Test
-	public void updateTest(){
-		/*Person chen = new Person("chenbin", 26);
-		mongoTemplate.insert(chen);
-		
-		Person qp = mongoTemplate.findOne(query(where("name").is("chenbin")), Person.class);
-		Assert.assertNotNull(qp);
-		
-		Person zhang = new Person(chen.getId(), "zhangxia", 27);
-		mongoTemplate.save(zhang);
-		
-		Person qp1 = mongoTemplate.findOne(query(where("id").is(chen.getId())), Person.class);
-		Assert.assertEquals(qp1.getName(), zhang.getName());*/
-		
+	public void updateTest() {
+		/*
+		 * Person chen = new Person("chenbin", 26); mongoTemplate.insert(chen);
+		 * 
+		 * Person qp = mongoTemplate.findOne(query(where("name").is("chenbin")),
+		 * Person.class); Assert.assertNotNull(qp);
+		 * 
+		 * Person zhang = new Person(chen.getId(), "zhangxia", 27);
+		 * mongoTemplate.save(zhang);
+		 * 
+		 * Person qp1 =
+		 * mongoTemplate.findOne(query(where("id").is(chen.getId())),
+		 * Person.class); Assert.assertEquals(qp1.getName(), zhang.getName());
+		 */
+
 	}
 }
