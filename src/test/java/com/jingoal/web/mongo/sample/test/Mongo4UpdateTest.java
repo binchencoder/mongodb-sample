@@ -1,9 +1,13 @@
 package com.jingoal.web.mongo.sample.test;
 
+import static org.springframework.data.mongodb.core.query.Criteria.where;
+import static org.springframework.data.mongodb.core.query.Query.query;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.testng.AbstractTestNGSpringContextTests;
+import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
@@ -34,7 +38,7 @@ public class Mongo4UpdateTest extends AbstractTestNGSpringContextTests {
 	 */
 	@Test
 	public void updateTest(){
-		/*Person chen = new Person("chenbin", 26);
+		Person chen = new Person("chenbin", 26);
 		mongoTemplate.insert(chen);
 		
 		Person qp = mongoTemplate.findOne(query(where("name").is("chenbin")), Person.class);
@@ -44,7 +48,6 @@ public class Mongo4UpdateTest extends AbstractTestNGSpringContextTests {
 		mongoTemplate.save(zhang);
 		
 		Person qp1 = mongoTemplate.findOne(query(where("id").is(chen.getId())), Person.class);
-		Assert.assertEquals(qp1.getName(), zhang.getName());*/
-		
+		Assert.assertEquals(qp1.getName(), zhang.getName());
 	}
 }
