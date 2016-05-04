@@ -19,17 +19,17 @@ public class Mongo4UpdateTest extends AbstractTestNGSpringContextTests {
 
 	@Autowired
 	private MongoTemplate mongoTemplate;
-	
+
 	@BeforeClass
-	public void clearCollection(){
+	public void clearCollection() {
 		mongoTemplate.dropCollection(Person.class);
 	}
-	
+
 	@AfterClass
-	public void destoryCollection(){
+	public void destoryCollection() {
 		mongoTemplate.dropCollection(Person.class);
 	}
-	
+
 	/**
 	 * @description: mongodb update test case
 	 *
