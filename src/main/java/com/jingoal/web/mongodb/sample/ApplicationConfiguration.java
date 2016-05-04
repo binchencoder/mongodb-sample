@@ -21,6 +21,5 @@ import org.springframework.data.mongodb.repository.config.EnableMongoRepositorie
 @Configuration
 @EnableMongoRepositories("com.jingoal.web.mongodb.sample.repositories")
 public class ApplicationConfiguration {
-	
-	
+
 }
