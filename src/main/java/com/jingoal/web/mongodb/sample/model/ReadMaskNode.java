@@ -1,10 +1,9 @@
 package com.jingoal.web.mongodb.sample.model;
 
-import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
-public class ReadMaskNode implements Serializable {
+public class ReadMaskNode {
 
 	/**
 	 * serialVersionUID: TODO(用一句话描述这个变量表示什么)

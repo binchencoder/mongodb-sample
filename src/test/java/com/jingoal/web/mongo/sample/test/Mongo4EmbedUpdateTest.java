@@ -5,6 +5,7 @@ import static org.springframework.data.mongodb.core.query.Query.query;
 
 import java.math.BigInteger;
 import java.util.HashSet;
+import java.util.Set;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoOperations;
@@ -69,5 +70,50 @@ public class Mongo4EmbedUpdateTest extends AbstractTestNGSpringContextTests {
 		
 		operations.updateFirst(query(where("itemKey").is("igoal." + 123L)), update, ReadMask.class);
 		
+	}
+	
+	@Test
+	public void updateEmbedDocumentTest1(){
+		MongoOperations operations = (MongoOperations) mongoTemplate;
+		
+		ReadMaskNode root = new ReadMaskNode();
+		root.setItemKey("igoal." + 123L);
+		
+		ReadMaskNode node = new ReadMaskNode();
+		node.setItemKey("frame." + 123L);
+		node.setChildren(new HashSet<ReadMaskNode>(0));
+		
+		root.getChildren().add(node);
+		
+		Update update = new Update();
+		update.push("root", root);
+		
+		operations.upsert(query(where("_id").is(id)), update, ReadMask.class);
+	}
+	
+	@Test
+	public void updateEmbedDocumentTest2(){
+		MongoOperations operations = (MongoOperations) mongoTemplate;
+		
+		
+		ReadMask mask = operations.findOne(query(where("_id").is(id)), ReadMask.class);
+		if (null != mask) {
+			ReadMaskNode root = mask.getRoot();
+			
+			ReadMaskNode node = new ReadMaskNode();
+			node.setItemKey("item." + 123L);
+			node.setChildren(new HashSet<ReadMaskNode>(0));
+			
+			Set<ReadMaskNode> children = root.getChildren();
+			for (ReadMaskNode rmn : children) {
+				rmn.getChildren().add(node);
+			}
+			root.setChildren(children);
+			
+			Update update = new Update();
+			update.push("root", root);
+			
+			operations.upsert(query(where("_id").is(id)), update, ReadMask.class);
+		}
 	}
 }
