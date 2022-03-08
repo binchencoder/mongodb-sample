@@ -55,3 +55,4 @@ bin
 test-output
 /.settings/
 .idea
+*.iml
