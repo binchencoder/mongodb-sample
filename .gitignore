@@ -54,3 +54,4 @@ logs
 bin
 test-output
 /.settings/
+.idea

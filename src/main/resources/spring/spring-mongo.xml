@@ -25,13 +25,13 @@
 			     write-timeout="0"
 			     write-fsync="true"/>
 		</mongo:mongo>
-		
-        <mongo:db-factory dbname="${mongo.database}" mongo-ref="mongo"/>
-		
-        <!-- 非主线模块需要的，因为modulebase导入这些东西 -->
-        <bean class="org.springframework.data.mongodb.core.mapping.event.LoggingEventListener" />
-        
-        <bean id="mongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
+
+		<mongo:db-factory dbname="${mongo.database}" mongo-ref="mongo"/>
+
+		<!-- 非主线模块需要的，因为modulebase导入这些东西 -->
+		<bean class="org.springframework.data.mongodb.core.mapping.event.LoggingEventListener" />
+
+		<bean id="mongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
 			<constructor-arg name="mongoDbFactory" ref="mongoDbFactory"/>
 		</bean>
 </beans>

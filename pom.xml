@@ -6,23 +6,22 @@
 	<artifactId>mongodb-sample</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
-	
+
 	<properties>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<maven.compiler.encoding>UTF-8</maven.compiler.encoding>
 		<java.version>1.8</java.version>
-		
+
 		<!-- logger version settings -->
 		<org.slf4j-version>1.6.3</org.slf4j-version>
 		<logback-version>1.1.2</logback-version>
-		
+
 		<!-- testing version settings -->
 		<org.testng-verison>6.8</org.testng-verison>
 		<org.hamcrest-version>1.1</org.hamcrest-version>
-		
+
 		<spring.version>4.2.5.RELEASE</spring.version>
-		<org.mybatis-spring.version>1.2.2</org.mybatis-spring.version>
 		<org.release-train.version>Gosling-SR4</org.release-train.version>
 	</properties>
 
@@ -88,31 +87,30 @@
 			<groupId>org.springframework.data</groupId>
 			<artifactId>spring-data-mongodb-log4j</artifactId>
 		</dependency>
-		
-		
+
 		<!-- logger dependencies settings -->
-        <dependency>
-            <groupId>ch.qos.logback</groupId>
-            <artifactId>logback-classic</artifactId>
-            <version>1.1.2</version>
-            <scope>runtime</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-api</artifactId>
-            <version>1.7.10</version>
-        </dependency>
-        <dependency>
-            <groupId>org.slf4j</groupId>
-            <artifactId>slf4j-log4j12</artifactId>
-            <version>1.7.10</version>
-        </dependency>
-        <dependency>
-            <groupId>commons-logging</groupId>
-            <artifactId>commons-logging</artifactId>
-            <version>1.2</version>
-        </dependency>
-		
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>1.1.2</version>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.7.10</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
+			<version>1.7.10</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-logging</groupId>
+			<artifactId>commons-logging</artifactId>
+			<version>1.2</version>
+		</dependency>
+
 		<!-- <dependency>
             <groupId>org.springframework.data</groupId>
             <artifactId>spring-data-mongodb</artifactId>
